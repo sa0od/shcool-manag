@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <link rel="stylesheet" href="./style//bootstrap.min.css" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"/>
+        <link rel="stylesheet" href="./style/styleboot.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    </head>
+<body>
+    <!-- Button trigger modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="AddStd" tabindex="-1" aria-labelledby="AddStdLabel" aria-hidden="true" onclick="subjectDate()">
+      <div class="modal-dialog modal-lg modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="AddStdLabel">Add Students</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="dataEntry">
+              <div class="row g-2">
+                <div class="form-floating col-md-6 col-sm-12">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="firstName"
+                    placeholder="First Name"
+                  />
+                  <label for="firstName">First Name</label>
+                </div>
+                <div class="form-floating col-md-6 col-sm-12">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="lastName"
+                    placeholder="Last Name"
+                  />
+                  <label for="lastName">Last Name</label>
+                </div>
+                <div class="form-floating col-md-6 col-sm-12">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="name@example.com"
+                  />
+                  <label for="email">email</label>
+                </div>
+                <div class="form-floating col-md-6 col-sm-12">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="phone"
+                    placeholder="050-000-0000"
+                  />
+                  <label for="mobile">Mobile Number</label>
+                </div>
+
+                <div class="form-floating col-md-6 col-sm-12">
+                  <select class="form-select" id="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                  <label for="gender">Gender</label>
+                </div>
+                <div class="form-floating col-md-6 col-sm-12">
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="dob"
+                    placeholder=""
+                  />
+                  <label for="dob">Date Of Birth</label>
+                </div>
+                <div class="form-floating col-md-12 col-sm-12 ">
+                  <select class="form-select" id="ddlSubjectName">
+                    <option selected =""></option>
+                  </select>
+                  <label for="subject">Subject</label>
+                </div>
+              
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-primary" id="btnAdd">
+              Add
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content">
+        <!-- Nav bar -->
+        <div class="sidebar">
+            <header>
+                <div class="user">
+                    <span class="image">
+                        <img src="./img/user.png" alt="logo" srcset="" />
+                    </span>
+                    <div class="userinfo">
+                        <p class="name">John Doe</p>
+                        <p class="dept">Web</p>
+                    </div>
+                </div>
+                <hr />
+            </header>
+            <div class="menu_bar">
+                <div class="menu">
+                    <ul>
+                        <a href="">
+                            <li>
+                                <i class="material-symbols-outlined">home</i>
+                                <span>dashboard</span>
+                            </li>
+                        </a>
+                        <a href="">
+                            <li>
+                                <i class="material-symbols-outlined">star</i>
+                                <span>class</span>
+                            </li>
+                        </a>
+                        <a href="">
+                            <li>
+                                <i class="material-symbols-outlined">menu_book</i>
+                                <span>subject</span>
+                            </li>
+                        </a>
+                        <a href="">
+                            <li>
+                                <i class="material-symbols-outlined">group</i>
+                                <span>teachers</span>
+                            </li>
+                        </a>
+                        <a href="">
+                            <li class="active">
+                                <i class="material-symbols-outlined">school</i>
+                                <span class="">students</span>
+                            </li>
+                        </a>
+                    </ul>
+                </div>
+                <div class="logout">
+                    <ul>
+                        <li>
+                            <i class="material-symbols-outlined">dark_mode</i>
+                            <span>Dark Mode</span>
+                            <span class="material-symbols-outlined"> toggle_on </span>
+                        </li>
+                        <li class="btn">
+                            <i class="material-symbols-outlined">logout</i>
+                            <span>log-out </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+<!-- siderbar data  -->
+        <div class="data">
+            <div class="title">
+                <h2>
+                    <span class="material-symbols-outlined"> school</span>
+                    Student
+                </h2>
+            </div>
+            <div class="tableDate">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#AddStd">
+                    Add Students
+                </button>
+                <button id="test" type="button" class="btn btn-primary">check</button>
+                <table class="table table-striped table-hover tab">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Mobile</th>
+                            <th scope="col">Gender</th>
+                            <th scope="col">DOB</th>
+                            <th scope="col">Class</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Event</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="./script/scriptboot.js"></script>
+    <script src="./script/bootstrap.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+</body>
+</html>

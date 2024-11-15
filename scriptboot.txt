@@ -1,0 +1,146 @@
+subject = document.getElementById  ('subject');
+addbtn = document.getElementById('btnAdd');
+stdName = document.getElementById('stdName');
+email = document.getElementById('email');
+phone = document.getElementById('phone');
+gender = document.getElementById('gender');
+date = document.getElementById('date');
+subject = document.getElementById('subject');
+stdModal = document.getElementById('AddStd');
+let table = document.getElementById('table');
+
+test = document.getElementById('test');
+
+students = [
+    {
+        Fname: 'John',
+        Lname: 'Doe',
+        email: 'test@gamil.com',
+        mobile: '0562699411',
+        gender: 'male',
+        dob: '10-02-2024',
+        subject: 'Math'
+    },
+] 
+
+subjects = ['HTML','C++'];
+
+addbtn.addEventListener('click',()=>{
+    let newTask = {
+
+        'Fname': firstName.value,
+        'Lname': lastName.value,
+        'email': email.value,
+        'mobile': phone.value,
+        'gender': gender.value,
+        'dob': date.value,
+        'subject': subject.value
+        
+       }
+       students.push(newTask);
+       alert('add sucs');
+});
+
+test.addEventListener('click',()=>{
+   for(let student of students){
+        console.log(student);
+    
+   }
+
+})
+function fillTable(){
+    
+    table.innerHTML = "";
+    for(let student of students){
+        let content = 
+            `  
+                
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Mobile</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">DOB</th>
+                    <th scope="col">Class</th>
+                    <th scope="col">Event</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>${firstName.value}</td>
+                    <td>${lastName.value}</td>
+                    <td>${email.value}</td>
+                    <td>${phone.value}</td>
+                    <td>${gender.value}</td>
+                    <td>${dob.value}</td>
+                    <td>${subject.value}</td>
+                    <td>
+                        <span class="material-symbols-outlined">
+                            visibility
+                        </span>
+                        <span class="material-symbols-outlined">
+                            edit_note
+                        </span>
+                        <span class="material-symbols-outlined">
+                            delete
+                        </span>
+                    </td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+            `;
+            table.innerHTML += content;
+    }
+}
+fillTable();
+
+
+function fillTaskOnPage(){
+    allTask.innerHTML = ` All Task: ${tasks.length}`;
+    tasksContent.innerHTML = "";
+    for(let task of tasks){
+        let content = 
+        `   <div class="task">
+                <div class="info">
+                        <p> ${task.title} </p>
+                        <h3> ${task.date} </h3>
+                </div>
+
+                    
+                    <div class="tools">
+                    
+                        <span class="material-symbols-outlined done" >
+                            done
+                        </span>
+                        <span class="material-symbols-outlined edit ">
+                            edit_note
+                        </span>
+                        <span class="material-symbols-outlined delete">
+                            close
+                        </span>
+                    </div>
+                
+
+                </div>
+        `;
+
+        tasksContent.innerHTML += content;
+    }
+}
+fillTaskOnPage();
+addIcon.addEventListener('click',function(){
+   let newTask = {
+    "title": inputText.value,
+    "date": '13/10/2020',
+    "isComplete": false
+   }
+   tasks.push(newTask);
+   inputText.value = "";
+   fillTaskOnPage();
+ 
+});
